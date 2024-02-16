@@ -11,16 +11,16 @@ export class CoursesComponent {
   courses: Course[] = [];
   displayedColumns = ['name', 'category'];
 
-  CoursesService: CoursesService;
+  //CoursesService: CoursesService;
 
-  constructor(){
+  constructor(private CoursesService: CoursesService){
     //this.courses = [];
-    this.CoursesService = new CoursesService();
-    this.courses = this.CoursesService.list();
+    //this.CoursesService = new CoursesService();
+
   }
 
   ngOnInit(): void {
-
+    this.courses = this.CoursesService.list();
   }
 
 }
