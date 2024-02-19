@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./courses.component.scss']
 })
 export class CoursesComponent {
-  courses: Observable<Course[]>;
+  courses$: Observable<Course[]>;
   displayedColumns = ['name', 'category'];
 
   //CoursesService: CoursesService;
@@ -17,7 +17,7 @@ export class CoursesComponent {
   constructor(private CoursesService: CoursesService){
     //this.courses = [];
     //this.CoursesService = new CoursesService();
-    this.courses = this.CoursesService.list();
+    this.courses$ = this.CoursesService.list();
   }
 
   ngOnInit(): void {
